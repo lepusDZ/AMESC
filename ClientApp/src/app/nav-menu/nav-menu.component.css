@@ -1,19 +1,149 @@
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+.navbar-brand img {
+  width: 80px;
 }
 
-html {
-  font-size: 14px;
+.navbar-nav {
+  align-items: center;
 }
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+
+.navbar .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 1.1em;
+  padding: 0.5em 1em;
+}
+
+.navbar {
+  background-color: #1800AD;
+  padding: 0.5em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-brand img {
+    width: 100px;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+    padding: 0 2em;
   }
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+@media screen and (max-width: 767px) {
+  .navbar {
+    justify-content: center;
+    /* Center everything for mobile */
+  }
+
+  .navbar-brand {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+  }
+
+  /* Adjust when navbar is expanded */
+  .navbar-expand-md .navbar-collapse {
+    justify-content: flex-end;
+    /* Align navbar items to the right */
+  }
+
+  .input-box.open {
+    width: 85vw !important;
+  }
 }
 
+
+.input-box {
+  position: absolute;
+  width: 60px;
+  height: 35px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  transition: width 0.5s ease-in-out, background-color 0s ease-in-out 0.5s;
+  z-index: 3000;
+}
+
+.input-box.open {
+  z-index: 5000;
+  background-color: #fff;
+  width: 20vw;
+  transition-delay: 0s;
+  /* Apply transition delay for opening */
+}
+
+.input-box input {
+  position: absolute;
+  right: 0;
+  width: 0;
+  /* Start with 0 width and expand on open */
+  height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  padding: 0;
+  border: none;
+  border-radius: 7px 20px 20px 7px;
+  /* Adjust for rounded corners */
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  /* Hide initially */
+}
+
+.input-box.open input {
+  width: 100%;
+  /* Expand width when open */
+  padding: 0 45px 0 70px;
+  /* Adjust padding to make room for icons */
+  opacity: 1;
+  /* Show input field */
+}
+
+.input-box .search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #020070;
+  border-radius: 20px 20px 20px 20px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  /* Add transition effect */
+}
+
+.input-box.open .search {
+  border-radius: 6px 20px 20px 6px;
+}
+
+.search .search-icon {
+  font-size: 30px;
+  color: #f2f2f2;
+}
+
+.input-box .close-icon {
+  position: absolute;
+  top: 50%;
+  right: -45px;
+  font-size: 30px;
+  color: #f2f2f2;
+  padding: 5px;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.input-box.open .close-icon {
+  transform: translateY(-50%) rotate(180deg);
+  pointer-events: auto;
+  opacity: 1;
+}
