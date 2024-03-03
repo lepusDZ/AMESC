@@ -10,6 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MatIconModule } from '@angular/material/icon';
+import { NewsComponent } from './news/news.component';
+import { NewsFeaturedComponent } from './news/news-featured/news-featured.component';
+import { NewsListComponent } from './news/news-list/news-list.component';
+import { NewsPieceComponent } from './news/news-piece/news-piece.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { MatIconModule } from '@angular/material/icon';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    NewsComponent,
+    NewsFeaturedComponent,
+    NewsListComponent,
+    NewsPieceComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
