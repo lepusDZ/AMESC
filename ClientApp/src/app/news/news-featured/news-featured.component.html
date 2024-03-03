@@ -1,0 +1,21 @@
+<div class="carousel">
+    <div id="featuredNews" class="carousel slide mt-3" data-bs-ride="carousel" data-bs-interval="10000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <news-piece [newsItem]="newsItems[0]"></news-piece>
+            </div>
+            <div class="carousel-item">
+                <news-piece [newsItem]="newsItems[1]"></news-piece>
+            </div>
+            <div class="carousel-item">
+                <news-piece [newsItem]="newsItems[2]"></news-piece>
+            </div>
+        </div>
+        <div class="carousel-indicators position-relative mt-4">
+            <button type="button" data-bs-target="#featuredNews" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#featuredNews" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#featuredNews" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+    </div>
+</div>
